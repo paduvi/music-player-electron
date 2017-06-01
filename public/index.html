@@ -21,6 +21,7 @@
     -->
     <title>React App</title>
     <link rel="stylesheet" href="%PUBLIC_URL%/css/global.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/title-bar.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Exo+2&amp;subset=latin-ext" rel="stylesheet">
 </head>
@@ -28,6 +29,16 @@
 <noscript>
     You need to enable JavaScript to run this app.
 </noscript>
+<div id="title-bar">
+    <div id="title">
+        SoundCloud Player
+    </div>
+    <div id="title-bar-btns">
+        <a href="javascript:void(0)" id="min-btn"></a>
+        <!--<a href="javascript:void(0)" id="max-btn"></a>-->
+        <a href="javascript:void(0)" id="close-btn"></a>
+    </div>
+</div>
 <div id="root"></div>
 <!--
   This HTML file is a template.
@@ -39,5 +50,46 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
+
+<script>
+    (function () {
+        // Retrieve remote BrowserWindow
+        const {BrowserWindow} = require('electron').remote
+
+        function init() {
+            // Minimize task
+            document.getElementById("min-btn").addEventListener("click", (e) => {
+                e.preventDefault();
+                var window = BrowserWindow.getFocusedWindow();
+                window.minimize();
+            });
+
+            // Maximize window
+            document.getElementById("max-btn").addEventListener("click", (e) => {
+                e.preventDefault();
+                var window = BrowserWindow.getFocusedWindow();
+                if (window.isMaximized()) {
+                    window.unmaximize();
+                } else {
+                    window.maximize();
+                }
+            });
+
+            // Close app
+            document.getElementById("close-btn").addEventListener("click", (e) => {
+                e.preventDefault();
+                var window = BrowserWindow.getFocusedWindow();
+                window.close();
+            });
+        };
+
+        document.onreadystatechange = () => {
+            if (document.readyState == "complete") {
+                init();
+            }
+        };
+    })();
+</script>
+</body>
 </body>
 </html>

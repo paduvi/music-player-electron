@@ -7,21 +7,10 @@
 body {
     margin: 0;
     font-family: 'Exo 2', sans-serif;
-    -ms-overflow-style: scrollbar;
-    -webkit-app-region:drag;
 }
 
 h1, h2, h3, h4, h5, h6 {
     -webkit-user-select: none;
-}
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="text"],
-button,
-textarea {
-    -webkit-app-region: no-drag;
 }
 
 .scotch_music {

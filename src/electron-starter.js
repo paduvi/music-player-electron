@@ -16,8 +16,9 @@ let mainWindow
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 500, height: 500,
-        titleBarStyle: 'hidden-inset',
+        width: 500, height: 540,
+        resizable: false,
+        frame: false,
         icon: path.join(__dirname, '/../public/img/logo.jpg')
     })
 
