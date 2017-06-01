@@ -20,6 +20,8 @@ Demo Cross-platform with Electron
 - MacOSX: `npm run package-mac`
 - Linux: `npm run package-linux`
 
-### Custom:
-Logo icons are located in `public/icon` folder, just replace files with the same name then run package command.
+After building process, packaged app will be appeared in `dist` folder.
 
+### Custom:
+- Logo icons are located in `public/icon` folder, just replace files with the same name then run package command.
+- **App Name**, **App Version** can be renamed in `package.json` by modifying `productName`, `version` value, respectively.
