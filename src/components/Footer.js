@@ -6,7 +6,7 @@ import React from 'react';
 export default () => (
     <div className="footer">
         <p>
-            Love from <img src={process.env.PUBLIC_URL + "/img/logo.jpg"} alt="logo" className="logo"/>
+            Love from <img src={process.env.PUBLIC_URL + "/icon/png/logo.png"} alt="logo" className="logo"/>
         </p>
     </div>
 )

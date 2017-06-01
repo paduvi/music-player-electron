@@ -15,7 +15,11 @@ let mainWindow
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 500, height: 500, titleBarStyle: 'hidden-inset'})
+    mainWindow = new BrowserWindow({
+        width: 500, height: 500,
+        titleBarStyle: 'hidden-inset',
+        icon: path.join(__dirname, '/../public/img/logo.jpg')
+    })
 
     // and load the index.html of the app.
     const startUrl = process.env.ELECTRON_START_URL || url.format({

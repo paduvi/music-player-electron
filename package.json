@@ -1,16 +1,19 @@
 {
-  "name": "electron-demo",
+  "name": "soundcloud-player",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
   "main": "src/electron-starter.js",
+  "productName": "SoundCloudPlayer",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "asar": "^0.13.0",
     "electron": "^1.6.10",
+    "electron-packager": "^8.7.0",
     "foreman": "^2.0.0",
     "react-autocomplete": "^1.5.5",
     "react-scripts": "1.0.7",
@@ -23,6 +26,9 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/electron-wait-react",
-    "react-start": "react-scripts start"
+    "react-start": "react-scripts start",
+    "package-mac": "electron-packager . --platform=darwin --overwrite --prune=true --out=dist --ignore=\"node_modules\" --icon=./public/icon/mac/logo.icns",
+    "package-win": "electron-packager . --platform=win32 --overwrite --asar=true --prune=true --out=dist --ignore=\"node_modules\" --icon=./public/icon/win/logo.ico",
+    "package-linux": "electron-packager . --platform=linux --overwrite --prune=true --out=dist --ignore=\"node_modules\" --icon=./public/icon/png/logo.png"
   }
 }
