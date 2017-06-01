@@ -5,12 +5,10 @@
   "homepage": "./",
   "main": "src/electron-starter.js",
   "productName": "SoundCloudPlayer",
-  "dependencies": {
+  "devDependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "whatwg-fetch": "^2.0.3"
-  },
-  "devDependencies": {
+    "whatwg-fetch": "^2.0.3",
     "asar": "^0.13.0",
     "electron": "^1.6.10",
     "electron-packager": "^8.7.0",
